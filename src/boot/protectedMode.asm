@@ -11,11 +11,9 @@ pmInit:
     mov ebp, 0x90000
     mov esp, ebp
 
-    ; Jump to the kernel bootstrapping code, which
-    ; is assembled to ELF and linked with the kernel.
-    ; It does the job of actually calling kmain(),
+    ; Jump to the kernel stub code, which is
+    ; assembled to ELF and linked with the kernel.
+    ; It does the job of actually calling C main(),
     ; and is used to set a fixed and reliable landing
     ; point into the kernel, unadffected by C/C++ code.
-    
-    ;jmp 0x7C00+1024
-    jmp loop
+    jmp 0x7C00+0x600    ; = 0x8300
