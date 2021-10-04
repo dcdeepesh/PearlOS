@@ -43,7 +43,7 @@ include $(BUILD_DIR)/depend
 
 # Miscellaneous
 .PHONY: run
-run: all
+run: $(OUT_DIR)/pearlOS.bin
 	cmd.exe /c run.bat
 
 .PHONY: clean
